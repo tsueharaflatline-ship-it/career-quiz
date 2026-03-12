@@ -56,11 +56,12 @@ export default function CareerQuiz() {
     <div style={s.wrapper}>
       {screen === "intro" && (
         <div style={s.card}>
-          <div style={{ padding: "40px 32px", textAlign: "center" }}>
-            <div style={{ display: "inline-block", background: "#FFF0E0", color: "#FF6B35", fontWeight: 700, fontSize: "13px", borderRadius: "100px", padding: "6px 16px", marginBottom: "20px" }}>✨ 20代のための</div>
-            <h1 style={{ fontSize: "48px", fontWeight: 900, lineHeight: 1.1, color: "#1A1A2E", margin: "0 0 16px", letterSpacing: "-1px" }}>適職タイプ<br /><span style={{ color: "#FF6B35" }}>診断</span></h1>
-            <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.7, margin: "0 0 24px" }}>8つの質問に答えるだけで、<br />あなたに合った仕事のスタイルがわかる。</p>
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginBottom: "32px", fontSize: "14px", color: "#888" }}>
+          <div style={{ padding: "28px 24px", textAlign: "center" }}>
+            <img src="/logo.png" alt="ロゴ" style={{ width: "180px", height: "auto", display: "block", margin: "0 auto 8px" }} />
+            <div style={{ display: "inline-block", background: "#FFF0E0", color: "#FF6B35", fontWeight: 700, fontSize: "13px", borderRadius: "100px", padding: "6px 16px", marginBottom: "8px" }}>✨ 20代のための</div>
+            <h1 style={{ fontSize: "48px", fontWeight: 900, lineHeight: 1.1, color: "#1A1A2E", margin: "0 0 8px", letterSpacing: "-1px" }}>適職タイプ<br /><span style={{ color: "#FF6B35" }}>診断</span></h1>
+            <p style={{ fontSize: "16px", color: "#555", lineHeight: 1.7, margin: "0 0 16px" }}>8つの質問に答えるだけで、<br />あなたに合った仕事のスタイルがわかる。</p>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "8px", marginBottom: "20px", fontSize: "14px", color: "#888" }}>
               <span>⏱ 約2分</span><span style={{ color: "#ddd" }}>|</span><span>📝 全8問</span><span style={{ color: "#ddd" }}>|</span><span>🎯 4タイプ</span>
             </div>
             <button onClick={handleStart} style={{ width: "100%", padding: "18px", background: "linear-gradient(135deg, #FF6B35, #F7931E)", color: "#fff", fontWeight: 800, fontSize: "17px", border: "none", borderRadius: "14px", cursor: "pointer", marginBottom: "12px" }}>診断スタート →</button>
