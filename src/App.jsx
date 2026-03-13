@@ -12,10 +12,10 @@ const questions = [
 ];
 
 const results = {
-  C: { type: "クリエイター型", emoji: "🎨", tagline: "つくることで、世界を動かす人", color: "#FF6B35", bg: "linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)", description: "感性と表現力があなたの最大の武器。ゼロからアイデアを生み出し、カタチにする力があります。「型通り」より「自分らしさ」を大切にできる環境で、最大限に輝くタイプです。", jobs: ["デザイナー", "コピーライター", "動画クリエイター", "ブランドマーケター", "UI・UXデザイナー"], strength: "発想力・表現力・独創性" },
-  L: { type: "リーダー型", emoji: "🚀", tagline: "人を動かし、結果で語る人", color: "#5B4CFF", bg: "linear-gradient(135deg, #5B4CFF 0%, #9B59B6 100%)", description: "行動力と推進力があなたの最大の武器。目標に向かって人を巻き込み、結果を出すのが得意です。チャレンジングな環境に飛び込むほど、本来の力が発揮されるタイプです。", jobs: ["営業職", "プロジェクトマネージャー", "コンサルタント", "事業開発", "ベンチャー全般"], strength: "行動力・統率力・突破力" },
-  S: { type: "サポーター型", emoji: "🌸", tagline: "誰かの力になることが、力になる人", color: "#26C485", bg: "linear-gradient(135deg, #26C485 0%, #15A0A0 100%)", description: "共感力と気遣いがあなたの最大の武器。人の気持ちに寄り添い、チームをあたたかく支える力があります。「誰かのために」という気持ちが、あなたの一番のエネルギー源です。", jobs: ["HR・人事", "カスタマーサクセス", "教育・研修", "医療・福祉", "接客・ホスピタリティ"], strength: "共感力・傾聴力・チームワーク" },
-  A: { type: "アナリスト型", emoji: "🔍", tagline: "データと論理で、正解を見つける人", color: "#1A7FDB", bg: "linear-gradient(135deg, #1A7FDB 0%, #0D4F8B 100%)", description: "論理力と探究心があなたの最大の武器。物事を深く調べ、筋道を立てて考えるのが得意です。「なんとなく」で動くより、根拠のある選択ができる環境で力を発揮するタイプです。", jobs: ["エンジニア", "データアナリスト", "経営企画", "Webマーケター", "コンサルタント"], strength: "分析力・論理力・専門性" },
+  C: { type: "クリエイター型", emoji: "🎨", tagline: "つくることで、世界を動かす人", color: "#FF6B35", bg: "linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)", description: "感性と表現力があなたの最大の武器。ゼロからアイデアを生み出し、カタチにする力があります。「型通り」より「自分らしさ」を大切にできる環境で、最大限に輝くタイプです。", jobs: ["デザイナー", "コピーライター", "動画クリエイター", "ブランドマーケター", "UI・UXデザイナー"], strength: "発想力・表現力・独創性", photo: "/creator.jpg" },
+  L: { type: "リーダー型", emoji: "🚀", tagline: "人を動かし、結果で語る人", color: "#5B4CFF", bg: "linear-gradient(135deg, #5B4CFF 0%, #9B59B6 100%)", description: "行動力と推進力があなたの最大の武器。目標に向かって人を巻き込み、結果を出すのが得意です。チャレンジングな環境に飛び込むほど、本来の力が発揮されるタイプです。", jobs: ["営業職", "プロジェクトマネージャー", "コンサルタント", "事業開発", "ベンチャー全般"], strength: "行動力・統率力・突破力", photo: "/leader.jpg" },
+  S: { type: "サポーター型", emoji: "🌸", tagline: "誰かの力になることが、力になる人", color: "#26C485", bg: "linear-gradient(135deg, #26C485 0%, #15A0A0 100%)", description: "共感力と気遣いがあなたの最大の武器。人の気持ちに寄り添い、チームをあたたかく支える力があります。「誰かのために」という気持ちが、あなたの一番のエネルギー源です。", jobs: ["HR・人事", "カスタマーサクセス", "教育・研修", "医療・福祉", "接客・ホスピタリティ"], strength: "共感力・傾聴力・チームワーク", photo: "/supporter.jpg" },
+  A: { type: "アナリスト型", emoji: "🔍", tagline: "データと論理で、正解を見つける人", color: "#1A7FDB", bg: "linear-gradient(135deg, #1A7FDB 0%, #0D4F8B 100%)", description: "論理力と探究心があなたの最大の武器。物事を深く調べ、筋道を立てて考えるのが得意です。「なんとなく」で動くより、根拠のある選択ができる環境で力を発揮するタイプです。", jobs: ["エンジニア", "データアナリスト", "経営企画", "Webマーケター", "コンサルタント"], strength: "分析力・論理力・専門性", photo: "/analyst.jpg" },
 };
 
 export default function CareerQuiz() {
@@ -101,11 +101,15 @@ export default function CareerQuiz() {
 
       {screen === "result" && r && (
         <div style={s.card}>
-          <div style={{ background: r.bg, padding: "40px 28px 32px", textAlign: "center" }}>
-            <div style={{ fontSize: "56px", marginBottom: "12px" }}>{r.emoji}</div>
-            <div style={{ display: "inline-block", background: "rgba(255,255,255,0.25)", color: "#fff", fontSize: "12px", fontWeight: 700, borderRadius: "100px", padding: "4px 14px", marginBottom: "12px" }}>あなたのタイプ</div>
-            <h2 style={{ fontSize: "28px", fontWeight: 900, color: "#fff", margin: "0 0 8px" }}>{r.type}</h2>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.85)", margin: 0 }}>「{r.tagline}」</p>
+          <div style={{ position: "relative" }}>
+            <img src={r.photo} alt={r.type} style={{ width: "100%", height: "260px", objectFit: "cover", display: "block" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.35) 100%)" }} />
+            <div style={{ position: "absolute", bottom: "24px", left: "20px" }}>
+              <div style={{ display: "inline-block", background: "rgba(255,255,255,0.25)", color: "#fff", fontSize: "11px", fontWeight: 700, borderRadius: "100px", padding: "4px 14px", marginBottom: "8px", letterSpacing: "2px", opacity: 0.85 }}>あなたのタイプ</div>
+              <h2 style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "26px", fontWeight: 900, color: "#fff", margin: "0 0 6px", textShadow: "0 2px 16px rgba(0,0,0,0.8)", letterSpacing: "1px" }}>{r.type}</h2>
+              <p style={{ fontFamily: "'Noto Serif JP', serif", fontSize: "13px", fontWeight: 400, color: "#fff", opacity: 0.9, margin: 0, textShadow: "0 1px 6px rgba(0,0,0,0.4)", letterSpacing: "0.5px" }}>「{r.tagline}」</p>
+            </div>
+            <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "32px", background: "linear-gradient(to bottom, transparent, #fff)" }} />
           </div>
           <div style={{ padding: "28px" }}>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.8, marginBottom: "24px" }}>{r.description}</p>
